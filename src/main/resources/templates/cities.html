@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Available Schemes</title>
+
+    <style>
+      .city-card{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:14px;
+    border-radius:12px;
+    background:#f9fafb;
+    transition:all 0.3s ease;
+    cursor:pointer;
+    border:1px solid transparent;
+}
+
+/* IMAGE */
+.city-card img{
+    width:55px;
+    height:55px;
+    border-radius:10px;
+    object-fit:cover;
+    transition:0.4s;
+}
+
+/* 🔥 HOVER EFFECT */
+.city-card:hover{
+    transform:translateY(-6px);   /* upar uthna */
+    box-shadow:0 12px 25px rgba(0,0,0,0.15);  /* shadow */
+    border:1px solid #00000020;   /* light black border */
+    background:white;
+}
+
+/* IMAGE ZOOM */
+.city-card:hover img{
+    transform:scale(1.1);
+}
+        body{
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right,#eef2f7,#f8fafc);
+            margin:0;
+        }
+
+        .heroes{
+    position:relative;
+    background:url('https://images.unsplash.com/photo-1505761671935-60b3a7427bad');
+    background-size:cover;
+    background-position:center;
+    padding:100px 20px;
+    text-align:center;
+    color:white;
+}
+
+.heroes::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5); /* dark overlay */
+}
+
+.heroes h1, .heroes p{
+    position:relative;
+    z-index:1;
+}
+        .heroes h1{
+            font-size:34px;
+            font-weight:700;
+        }
+
+        .containers{
+    max-width:1100px;
+    margin:-80px auto 40px;
+    background:white;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 20px 50px rgba(0,0,0,0.15);
+}
+
+        .containers h2{
+            text-align:center;
+            margin-bottom:20px;
+        }
+
+        .grids{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+            gap:20px;
+        }
+
+        .city-card{
+            display:flex;
+            align-items:center;
+            gap:10px;
+            padding:12px;
+            border-radius:10px;
+            background:#f9fafb;
+            transition:0.3s;
+            cursor:pointer;
+        }
+
+        .city-card img{
+            width:50px;
+            height:50px;
+            border-radius:8px;
+        }
+
+        .city-card:hover{
+            transform:scale(1.05);
+            box-shadow:0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .btn{
+    display:block;
+    margin:25px auto 0;
+    padding:12px 25px;
+    background:#6c5ce7;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-weight:600;
+    cursor:pointer;
+}
+        .city-card{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:14px;
+    border-radius:12px;
+    background:#f9fafb;
+    transition:0.3s;
+    cursor:pointer;
+}
+
+.city-card img{
+    width:55px;
+    height:55px;
+    border-radius:10px;
+}
+
+.city-card span{
+    font-weight:600;
+}
+
+.city-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.12);
+}
+
+        .btn:hover{
+            background:#3d32d6;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="hero">
+    <h1>Explore Schemes Available in Your City</h1>
+    <p>Find government benefits near you</p>
+</div>
+
+<div class="container">
+
+    <h2>Available Cities</h2>
+
+    <div class="grid">
+
+        <div class="city-card">
+            <img src="https://images.unsplash.com/photo-1590650046871-92c887180603">
+            <span>Indore</span>
+        </div>
+
+        <div class="city-card">
+            <img src="https://images.unsplash.com/photo-1597074866923-dc0589150358">
+            <span>Bhopal</span>
+        </div>
+
+        <div class="city-card">
+            <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5">
+            <span>Delhi</span>
+        </div>
+
+        <div class="city-card">
+            <img src="https://images.unsplash.com/photo-1567157577867-05ccb1388e66">
+            <span>Mumbai</span>
+        </div>
+
+        <div class="city-card">
+            <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791">
+            <span>Jaipur</span>
+        </div>
+
+        <div class="city-card">
+            <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41">
+            <span>Lucknow</span>
+        </div>
+        <div class="city-card">
+            <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883">
+            <span>Pune</span>
+        </div>
+<div class="city-card">
+            <img src="https://images.unsplash.com/photo-1611647832580-377268dba7cb">
+            <span>Kota</span>
+        </div>
+        
+<div class="city-card">
+            <img src="https://images.unsplash.com/photo-1609947017136-9daf32a5eb16">
+            <span>Patna</span>
+        </div>
+<div class="city-card">
+            <img src="https://images.unsplash.com/photo-1597047084897-51e81819a499">
+            <span>Noida</span>
+        </div>
+
+
+
+    </div>
+
+    <button class="btn">View More</button>
+
+</div>
+
+</body>
+</html>

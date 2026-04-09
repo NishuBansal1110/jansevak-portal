@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Eligible Schemes</title>
+
+    <style>
+      body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d") no-repeat center center/cover;
+    min-height: 100vh;
+}
+body{
+    animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+.container {
+    background: rgba(255,255,255,0.9);
+    min-height: 100vh;
+    padding: 40px;
+}
+      
+      h1 {
+          font-size: 32px;
+          color: #2a5298;
+      }
+      
+      .card-container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 25px;
+          margin-top: 40px;
+      }
+      body{
+    animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+.card:nth-child(1){ animation-delay:0.1s; }
+.card:nth-child(2){ animation-delay:0.2s; }
+.card:nth-child(3){ animation-delay:0.3s; }
+.card:nth-child(4){ animation-delay:0.4s; }
+.card:nth-child(5){ animation-delay:0.5s; }
+.card:nth-child(6){ animation-delay:0.6s; }
+.card:nth-child(7){ animation-delay:0.7s; }
+.card:nth-child(8){ animation-delay:0.8s; }
+
+.card:hover{
+    transform: translateY(-10px) scale(1.04);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+button{
+    transition: 0.2s;
+}
+
+button:active{
+    transform: scale(0.95);
+}
+
+h1, h2{
+    animation: slideDown 0.8s ease;
+}
+
+@keyframes slideDown{
+    from{
+        transform: translateY(-30px);
+        opacity:0;
+    }
+    to{
+        transform: translateY(0);
+        opacity:1;
+    }
+}
+      
+      .scheme-card {
+          background: #ffffff;
+          padding: 25px;
+          width: 320px;
+          border-radius: 15px;
+          box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+          transition: 0.3s ease;
+          text-align: left;
+      }
+      
+      .scheme-card:hover {
+          transform: translateY(-6px);
+      }
+      
+      .scheme-card h3 {
+          color: #2a5298;
+      }
+      
+      .btn {
+          display: inline-block;
+          margin-top: 15px;
+          padding: 8px 15px;
+          background: #2a5298;
+          color: white;
+          text-decoration: none;
+          border-radius: 8px;
+      }
+      
+      .back-btn {
+          margin-top: 40px;
+          display: inline-block;
+          padding: 10px 20px;
+          background: #2a5298;
+          color: white;
+          border-radius: 8px;
+          text-decoration: none;
+      }
+      .scheme-container{
+    display:flex;
+    gap:30px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+      </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1 th:text="'Hello ' + ${name}"></h1>
+    <h2>Eligible Schemes</h2>
+
+    <div class="card-container" th:if="${schemes.size() > 0}">
+        <div class="scheme-card" th:each="scheme : ${schemes}">
+            <h3 th:text="${scheme.schemeName}"></h3>
+            <p><strong>Minimum Age:</strong> <span th:text="${scheme.minAge}"></span></p>
+            <p><strong>Max Income:</strong> ₹<span th:text="${scheme.maxIncome}"></span></p>
+            <p><strong>Category:</strong> <span th:text="${scheme.category}"></span></p>
+            <p><strong>State:</strong> <span th:text="${scheme.state}"></span></p>
+
+            <a href="#" class="btn">View Details</a>
+        </div>
+    </div>
+
+    <div class="no-scheme" th:if="${schemes.size() == 0}">
+        No schemes available for you.
+    </div>
+    <div class="scheme-container">
+      <div th:each="scheme : ${schemes}" class="scheme-card">
+
+    
+</div>
+<a href="/eligibility" class="back-btn">Go Back</a>
+
+</body>
+</html>

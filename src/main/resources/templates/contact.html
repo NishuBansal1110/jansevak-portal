@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Contact Us - JanSevak</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg,#e8f5ee,#f3f8f5);
+}
+
+/* MAIN BOX */
+.contact-box{
+  
+    width:100%;
+    min-height:100vh;   /* full screen height */
+    margin:0;           /* remove center gap */
+    border-radius:0;    /* full width feel */
+
+    display:flex;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 15px 40px rgba(0,0,0,0.15);
+}
+
+/* LEFT FORM */
+.form-section{
+    width:50%;
+    background:white;
+    padding:50px;
+}
+
+.form-section h2{
+  
+    color:#0E3B2E;
+}
+
+.form-section input,
+.form-section textarea{
+    width:100%;
+    border:none;
+    border-bottom:1px solid #ccc;
+    padding:10px;
+    margin:20px 0;
+    outline:none;
+}
+
+.form-section button{
+  margin-top: 15px;
+    padding: 10px 18px;
+    border: none;
+    background: linear-gradient(90deg, #6c63ff, #5a55e0);
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.form-section button:hover{
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(108,99,255,0.4);
+}
+
+/* RIGHT SIDE DESIGN */
+.info-section{
+    width:50%;
+    position:relative;
+    background: linear-gradient(135deg,#0E3B2E,#1f7a5a);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* CIRCLE CARD */
+.info-card{
+    background:white;
+    border-radius:50%;
+    width:260px;
+    height:260px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.info-card h3{
+    color:#0E3B2E;
+}
+
+.info-card p{
+    font-size:14px;
+}
+
+/* FLOATING SHAPES */
+.info-section::before{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    background:rgba(255,255,255,0.05);
+    border-radius:50%;
+    top:-80px;
+    right:-80px;
+}
+
+.info-section::after{
+    content:"";
+    position:absolute;
+    width:200px;
+    height:200px;
+    background:rgba(255,255,255,0.05);
+    border-radius:50%;
+    bottom:-60px;
+    left:-60px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="contact-box">
+
+    <!-- LEFT -->
+    <div class="form-section">
+        <h2>Contact Us</h2>
+        <p>Have any questions? We’re here to help you.</p>
+
+        <input type="text" placeholder="Name">
+        <input type="email" placeholder="Email Address">
+        <textarea placeholder="Your Message"></textarea>
+
+        <button>Submit</button>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="info-section">
+        <div class="info-card">
+            <h3>JanSevak Portal</h3>
+            <p>📍 Indore, India</p>
+            <p>📞 +91 9876543210</p>
+            <p>✉ support@jansevak.com</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
