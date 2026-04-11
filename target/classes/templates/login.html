@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<title>Login - JanSevak Portal</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+/* Background */
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:linear-gradient(rgba(14,59,46,0.7),rgba(14,59,46,0.7)),
+url("https://images.unsplash.com/photo-1593113630400-ea4288922497");
+
+background-size:cover;
+background-position:center;
+}
+
+/* Login Card */
+
+.login-box{
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(12px);
+padding:45px;
+border-radius:15px;
+width:380px;
+text-align:center;
+color:white;
+box-shadow:0 10px 30px rgba(0,0,0,0.35);
+}
+
+/* Logo */
+
+.logo{
+font-size:28px;
+font-weight:700;
+color:#FFD700;
+margin-bottom:5px;
+}
+
+.tagline{
+font-size:14px;
+margin-bottom:30px;
+}
+
+/* Input Fields */
+
+input{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:none;
+border-radius:8px;
+outline:none;
+font-size:14px;
+}
+
+/* Button */
+
+button{
+width:100%;
+padding:12px;
+background:#FFD700;
+border:none;
+border-radius:8px;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:white;
+color:#0E3B2E;
+}
+
+/* Error Message */
+
+.error{
+color:#ffcccc;
+margin-top:10px;
+font-size:14px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="login-box">
+
+<div class="logo">JanSevak Portal</div>
+
+<div class="tagline">
+Government Schemes & Scholarships Platform
+</div>
+
+<form action="/loginUser" method="post">
+
+<input type="email" name="email" placeholder="Enter Email Address" required>
+
+<input type="password" name="password" placeholder="Enter Password" required>
+
+<button type="submit">Login</button>
+
+<p class="error" th:text="${error}"></p>
+
+</form>
+
+</div>
+
+</body>
+</html>

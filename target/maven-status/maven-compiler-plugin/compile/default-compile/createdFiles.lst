@@ -1,0 +1,10 @@
+com/jansevak/portal/EligibilityController.class
+com/jansevak/portal/UserRepository.class
+com/jansevak/portal/SchemeRepository.class
+com/jansevak/portal/User.class
+com/jansevak/portal/Scheme.class
+com/jansevak/portal/EligibilityRepository.class
+com/jansevak/portal/Scholarship.class
+com/jansevak/portal/HomeController.class
+com/jansevak/portal/Eligibility.class
+com/jansevak/portal/PortalApplication.class

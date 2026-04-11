@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Check Eligibility - JanSevak</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    min-height:100vh;
+    margin:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: linear-gradient(rgba(8,61,49,0.65), rgba(8,61,49,0.65)),
+                url('https://images.unsplash.com/photo-1523580846011-d3a5bc25702b');
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+/* Glass Card */
+.form-container{
+    width:420px;
+    padding:40px;
+    border-radius:25px;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(15px);
+    box-shadow:0 15px 40px rgba(0,0,0,0.3);
+    color:white;
+    text-align:center;
+}
+
+.form-container h2{
+    margin-bottom:25px;
+    font-size:28px;
+    font-weight:600;
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+/* Inputs */
+input, select{
+    padding:12px;
+    border:none;
+    border-radius:12px;
+    outline:none;
+    font-size:14px;
+}
+
+input[type="radio"]{
+    margin-right:5px;
+}
+
+.radio-group{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    font-size:14px;
+}
+
+/* Button */
+button{
+    padding:14px;
+    border:none;
+    border-radius:15px;
+    background:#f4c430;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:white;
+    color:#083D31;
+}
+
+</style>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <h2>Check Your Eligibility</h2>
+    
+        <form action="/check" method="post">
+    
+            <input type="text" name="name" placeholder="Enter your Name" required>
+    
+            <input type="number" name="age" placeholder="Enter your Age" required>
+    
+            <select name="category" required>
+                <option value="">Select Category</option>
+                <option value="General">General</option>
+                <option value="OBC">OBC</option>
+                <option value="SC">SC</option>
+                <option value="ST">ST</option>
+            </select>
+    
+            <select name="income">
+                <option value="100000">Below 1 Lakh</option>
+                <option value="250000">1-2.5 Lakh</option>
+                <option value="500000">Above 2.5 Lakh</option>
+            </select>
+    
+            <div class="radio-group">
+                <label><input type="radio" name="student" value="yes" required> Student</label>
+                <label><input type="radio" name="student" value="no"> Not Student</label>
+            </div>
+    
+            <input type="text" name="state" placeholder="Enter State" required>
+    
+            <button type="submit">Check Eligibility</button>
+    
+        </form>
+    </div>
+    
+    </body>
+    </html> 
